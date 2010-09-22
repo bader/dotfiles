@@ -1,0 +1,280 @@
+#UNCONFIGURED
+#
+# To find out how to get a proper configuration file please read:
+#
+# /usr/share/doc/lirc/README.Debian
+
+begin
+prog=irexec
+button=POWER
+config=tvtime-command QUIT
+repeat=0
+end
+
+begin
+prog=irexec
+button=MODE
+config=tvtime &
+repeat=0
+end
+
+begin
+prog=irexec
+button=MENU
+config=tvtime-command SHOW_MENU
+repeat=0
+end
+
+begin
+prog=irexec
+button=FUNC
+config=tvtime-command TOGGLE_FULLSCREEN
+repeat=0
+end
+
+begin
+prog=irexec
+button=K_1
+config=tvtime-command CHANNEL_1 
+repeat=0
+end
+
+begin
+prog=irexec
+button=K_2
+config=tvtime-command CHANNEL_2
+repeat=0
+end
+
+begin
+prog=irexec
+button=K_3
+config=tvtime-command CHANNEL_3
+repeat=0
+end
+
+begin
+prog=irexec
+button=K_4
+config=tvtime-command CHANNEL_4
+repeat=0
+end
+
+begin
+prog=irexec
+button=K_5
+config=tvtime-command CHANNEL_5
+repeat=0
+end
+
+begin
+prog=irexec
+button=K_6
+config=tvtime-command CHANNEL_6
+repeat=0
+end
+
+begin
+prog=irexec
+button=K_7
+config=tvtime-command CHANNEL_7
+repeat=0
+end
+
+begin
+prog=irexec
+button=K_8
+config=tvtime-command CHANNEL_8
+repeat=0
+end
+
+begin
+prog=irexec
+button=K_9
+config=tvtime-command CHANNEL_9
+repeat=0
+end
+
+begin
+prog=irexec
+button=K_0
+config=tvtime-command CHANNEL_0
+repeat=0
+end
+
+begin
+prog=irexec
+button=INFO
+config=tvtime-command DISPLAY_INFO
+repeat=0
+end
+
+begin
+prog=irexec
+button=SLEEP
+config=tvtime-command SLEEP
+repeat=0
+end
+
+begin
+prog=irexec
+button=MUTE
+config=tvtime-command TOGGLE_MUTE
+repeat=0
+end
+
+begin
+prog=irexec
+button=RIGHT
+config=tvtime-command RIGHT
+repeat=1
+end
+
+begin
+prog=irexec
+button=VOLUP
+config=tvtime-command RIGHT
+repeat=1
+end
+
+begin
+prog=irexec
+button=LEFT
+config=tvtime-command LEFT
+repeat=1
+end
+
+begin
+prog=irexec
+button=VOLDOWN
+config=tvtime-command LEFT
+repeat=1
+end
+
+begin
+prog=irexec
+button=UP
+config=tvtime-command CHANNEL_UP
+repeat=0
+end
+
+begin
+prog=irexec
+button=CHUP
+config=tvtime-command CHANNEL_UP
+repeat=0
+end
+
+begin
+prog=irexec
+button=DOWN
+config=tvtime-command CHANNEL_DOWN
+repeat=0
+end
+
+begin
+prog=irexec
+button=CHDOWN
+config=tvtime-command CHANNEL_DOWN
+repeat=0
+end
+
+begin
+prog=irexec
+button=AUDIO
+config=tvtime-command SCREENSHOT
+repeat=0
+end
+
+begin
+prog=irexec
+button=TVAV
+config=tvtime-command TOGGLE_INPUT
+repeat=0
+end
+
+begin
+prog=irexec
+button=RECALL
+config=tvtime-command CHANNEL_PREV
+repeat=0
+end
+
+####################################
+#             MPlayer              #
+####################################
+#Звук +
+begin
+     button = VOLUP
+     prog = mplayer
+     config = volume 1
+     repeat = 1
+end
+#Звук -
+begin
+     button = VOLDOWN
+     prog = mplayer
+     config = volume -1
+     repeat = 1
+end
+#старт\стоп воспроизведение
+begin
+     button = OK
+     prog = mplayer
+     config = pause
+end
+#во весь экран
+begin
+     button = MENU
+     prog = mplayer
+     config = vo_fullscreen
+end
+
+#прокрутка вперед на 10 минут
+begin
+     button = CHANUP
+     prog = mplayer
+     config = seek 600
+end
+
+#прокрутка назад на 10 минут
+begin
+     button = CHANDOWN
+     prog = mplayer
+     config = seek -600
+end
+
+#прокрутка вперед на 1 минуту
+begin
+     button = UP
+     prog = mplayer
+     config = seek 60
+end
+
+#прокрутка назад на 1 минуту
+begin
+     button = DOWN
+     prog = mplayer
+     config = seek -60
+end
+
+#прокрутка вперед на 10 секунд
+begin
+     button = RIGHT
+     prog = mplayer
+     config = seek 10
+end
+
+#прокрутка назад на 10 секунд
+begin
+     button = LEFT
+     prog = mplayer
+     config = seek -10
+end
+
+#Закрыть mplayer
+begin
+     button = POWER
+     prog = mplayer
+     config = q
+end

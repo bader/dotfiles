@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<opml version="2.0">
+    <head>
+        <title>
+            gPodder subscriptions
+        </title>
+        <dateCreated>
+            Wed, 22 Sep 2010 20:32:33 +0400
+        </dateCreated>
+    </head>
+    <body>
+        <outline text="Learn and practise useful English language for everyday situations with the BBC. Your weekly instruction manual for saying or doing something in English is published every Friday. Each programme is six minutes long and contains examples and explanations to help you improve your knowledge of the English language across a wide range of topics." title="6 Minute English" type="rss" xmlUrl="http://downloads.bbc.co.uk/podcasts/worldservice/how2/rss.xml"/>
+        <outline text="Подкасты об ООП, паттернах и т.д. (для студентов)" title="The Art Of Programming" type="rss" xmlUrl="http://taop.rpod.ru/rss.xml"/>
+        <outline text="Insight, colour, wit and analysis as the BBC Russian Service business team looks at the world business and economy stories and their effects on everyday life. New episodes are added at 1830 Moscow (1530 London) Monday to Friday." title="Business round-up from BBC Russian" type="rss" xmlUrl="http://downloads.bbc.co.uk/podcasts/worldservice/bizclass/rss.xml"/>
+        <outline text="" title="Channel 9" type="rss" xmlUrl="http://channel9.msdn.com/Feeds/RSS"/>
+        <outline text="" title="Channel 9 - C++" type="rss" xmlUrl="http://channel9.msdn.com/Tags/c++/RSS"/>
+        <outline text="" title="Channel 9 - STL" type="rss" xmlUrl="http://channel9.msdn.com/Tags/stl/RSS"/>
+        <outline text="English as a Second Language Podcast is for anyone who wants to improve their English speaking and listening skills." title="English as a Second Language Podcast" type="rss" xmlUrl="http://feeds.feedburner.com/EnglishAsASecondLanguagePodcast"/>
+        <outline text="" title="Entries tagged with c++ - Channel 9" type="rss" xmlUrl="http://channel9.msdn.com/tags/C++/feed/ipod/"/>
+        <outline text="" title="Entries tagged with c9 lectures - Channel 9" type="rss" xmlUrl="http://channel9.msdn.com/tags/C9+Lectures/feed/ipod/"/>
+        <outline text="Improve your English grammar with the BBC. Each week we challenge an English language student on an area of the English language such as verb forms, tenses, prepositions and pronunciation. Listen to a short presentation on the topic then try to answer the questions. The programmes are recorded on location in an English language classroom. Each episode lasts for six minutes and is made available every Friday." title="Grammar Challenge (Learn English)" type="rss" xmlUrl="http://downloads.bbc.co.uk/podcasts/worldservice/gc/rss.xml"/>
+        <outline text="Using these short topical modules from the BBC Russian Service, this podcast will help you learn the English language. Updated weekly." title="Learn English with BBCRussian" type="rss" xmlUrl="http://downloads.bbc.co.uk/podcasts/worldservice/english/rss.xml"/>
+        <outline text="Подкаст о семействе операционных систем Ubuntu и жизни сообщества" title="Russian Ubuntu Podcast" type="rss" xmlUrl="http://russianubuntupodcast.rpod.ru/rss.xml"/>
+        <outline text="Your resource for English pronunciation and vocabulary questions" title="Speaking English Podcast" type="rss" xmlUrl="http://feeds.feedburner.com/speakingenglish"/>
+        <outline text="Improve your English vocabulary, grammar, and listening skills with the BBC. Our weekly features and interviews will help you practise and develop your English. We cover a range of topics using everyday informal language, highlighting useful words and expressions." title="Talk About English (Learn English)" type="rss" xmlUrl="http://downloads.bbc.co.uk/podcasts/worldservice/tae/rss.xml"/>
+        <outline text="The most important five minutes of your day" title="tech5" type="rss" xmlUrl="http://www.mevio.com/feeds/tech5.xml"/>
+        <outline text="Each year, the TED (Technology, Entertainment, Design) conference hosts some of the world's most fascinating people: Trusted voices and convention-breaking mavericks, icons and geniuses. These podcasts (also available in audio format) capture the most ext" title="TEDTalks (video)" type="rss" xmlUrl="http://feeds.feedburner.com/tedtalks_video"/>
+        <outline text="" title="this WEEK in TECH" type="rss" xmlUrl="http://twit.tv/node/4346/feed"/>
+        <outline text="Пираты Радио-Т" title="Пираты-РТ" type="rss" xmlUrl="http://feeds.feedburner.com/pirate-radio-t"/>
+        <outline text="Еженедельные импровизации на хай–тек темы" title="Радио-Т" type="rss" xmlUrl="http://feeds.rucast.net/radio-t"/>
+    </body>
+</opml>

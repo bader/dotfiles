@@ -1,0 +1,23 @@
+alias df='df -mh -x supermount'
+alias du='du -h' # du сразу выводит размеры "по-человечески"
+alias less='less -M'
+
+alias ls='ls -F --color=auto --group-directories-first'
+alias ll='ls -lh --color=auto'
+alias la='ls -A'
+alias l='ls -CF'
+alias ls-l='ls -l' # ещё одна опечатка
+
+alias ..='cd ..' # экономим целых 3 символа
+alias ...='cd ../..'
+alias cd..='cd ..' # исправление обычной очепятки
+
+alias grep='grep --colour=auto'
+
+alias -s {avi,mpeg,mpg,mov,m2v}=mplayer
+alias -s {odt,doc,sxw,rtf}=openoffice.org
+alias -s pdf=xpdf
+
+#alias apt='sudo apt-get install'
+alias apt='sudo apt-get'
+alias g='gvim --remote-silent'
