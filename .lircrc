@@ -278,3 +278,10 @@ begin
      prog = mplayer
      config = q
 end
+########################## VLC #################################
+#Закрыть vlc
+begin
+     button = POWER
+     prog = vlc
+     config = quit
+end

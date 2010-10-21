@@ -1,0 +1,36 @@
+[submodule ".vim/bundle/fugitive"]
+	path = .vim/bundle/fugitive
+	url = http://github.com/tpope/vim-fugitive.git
+[submodule ".vim/bundle/liquid"]
+	path = .vim/bundle/liquid
+	url = http://github.com/tpope/vim-liquid.git
+[submodule ".vim/bundle/OmniCppComplete"]
+	path = .vim/bundle/OmniCppComplete
+	url = http://github.com/vim-scripts/OmniCppComplete.git
+[submodule ".vim/bundle/c-support"]
+	path = .vim/bundle/c-support
+	url = http://github.com/vim-scripts/c.vim.git
+[submodule ".vim/bundle/xptemplate"]
+	path = .vim/bundle/xptemplate
+	url = http://github.com/vim-scripts/xptemplate.git
+[submodule ".vim/bundle/liquidcarbon"]
+	path = .vim/bundle/liquidcarbon
+	url = http://github.com/vim-scripts/Liquid-Carbon.git
+[submodule ".vim/bundle/nerdcommenter"]
+	path = .vim/bundle/nerdcommenter
+	url = http://github.com/scrooloose/nerdcommenter.git
+[submodule ".vim/bundle/bufexplorer"]
+	path = .vim/bundle/bufexplorer
+	url = http://github.com/vim-scripts/bufexplorer.zip.git
+[submodule ".vim/bundle/project"]
+	path = .vim/bundle/project
+	url = http://github.com/vim-scripts/project.tar.gz.git
+[submodule ".vim/bundle/taglist"]
+	path = .vim/bundle/taglist
+	url = http://github.com/vim-scripts/taglist.vim.git
+[submodule ".vim/bundle/command-t"]
+	path = .vim/bundle/command-t
+	url = http://github.com/vim-scripts/Command-T.git
+[submodule ".vim/bundle/indexer"]
+	path = .vim/bundle/indexer
+	url = http://github.com/vim-scripts/indexer.tar.gz.git
