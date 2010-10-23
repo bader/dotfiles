@@ -7,9 +7,6 @@
 [submodule ".vim/bundle/OmniCppComplete"]
 	path = .vim/bundle/OmniCppComplete
 	url = http://github.com/vim-scripts/OmniCppComplete.git
-[submodule ".vim/bundle/c-support"]
-	path = .vim/bundle/c-support
-	url = http://github.com/vim-scripts/c.vim.git
 [submodule ".vim/bundle/xptemplate"]
 	path = .vim/bundle/xptemplate
 	url = http://github.com/vim-scripts/xptemplate.git
