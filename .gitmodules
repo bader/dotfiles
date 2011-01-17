@@ -4,9 +4,6 @@
 [submodule ".vim/bundle/liquid"]
 	path = .vim/bundle/liquid
 	url = http://github.com/tpope/vim-liquid.git
-[submodule ".vim/bundle/xptemplate"]
-	path = .vim/bundle/xptemplate
-	url = http://github.com/vim-scripts/xptemplate.git
 [submodule ".vim/bundle/liquidcarbon"]
 	path = .vim/bundle/liquidcarbon
 	url = http://github.com/vim-scripts/Liquid-Carbon.git
