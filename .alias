@@ -19,5 +19,5 @@ alias -s {odt,doc,sxw,rtf}=openoffice.org
 alias -s pdf=xpdf
 
 #alias apt='sudo apt-get install'
-alias apt='sudo aptitude'
+alias apt='sudo apt-get'
 alias g='gvim --remote-silent'

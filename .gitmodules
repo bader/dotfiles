@@ -4,9 +4,6 @@
 [submodule ".vim/bundle/liquid"]
 	path = .vim/bundle/liquid
 	url = http://github.com/tpope/vim-liquid.git
-[submodule ".vim/bundle/OmniCppComplete"]
-	path = .vim/bundle/OmniCppComplete
-	url = http://github.com/vim-scripts/OmniCppComplete.git
 [submodule ".vim/bundle/xptemplate"]
 	path = .vim/bundle/xptemplate
 	url = http://github.com/vim-scripts/xptemplate.git
@@ -31,3 +28,9 @@
 [submodule ".vim/bundle/indexer"]
 	path = .vim/bundle/indexer
 	url = http://github.com/vim-scripts/indexer.tar.gz.git
+[submodule ".vim/bundle/protodef"]
+	path = .vim/bundle/protodef
+	url = http://github.com/ewiplayer/vim-protodef.git
+[submodule ".vim/bundle/fswitch"]
+	path = .vim/bundle/fswitch
+	url = http://github.com/ewiplayer/vim-fswitch.git

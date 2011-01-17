@@ -133,7 +133,8 @@ end
 begin
 prog=irexec
 button=VOLUP
-config=tvtime-command RIGHT
+#config=tvtime-command RIGHT
+config=amixer -- sset Line 1%+
 repeat=1
 end
 
@@ -147,7 +148,8 @@ end
 begin
 prog=irexec
 button=VOLDOWN
-config=tvtime-command LEFT
+#config=tvtime-command LEFT
+config=amixer -- sset Line 1%-
 repeat=1
 end
 

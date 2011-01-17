@@ -155,7 +155,7 @@ set ruler
 set showcmd
 
 " Включаем "умные" отспупы ( например, автоотступ после {)
-set smartindent
+set cindent
 
 " Заставляем shift-insert работать как в Xterm
 map <S-Insert> <MiddleMouse>
@@ -276,7 +276,7 @@ menu Encoding.utf-8 :e ++enc=utf8 <CR>
 imap {<CR> {<CR>}<Esc>O
 
 " С-q - выход из Vim
-map «C-Q> «Esc>:qa«cr>
+map <C-Q> <Esc>:qa<cr>
 
 " Автозавершение слов по tab =)
 function InsertTabWrapper()
