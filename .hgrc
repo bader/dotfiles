@@ -1,0 +1,16 @@
+[ui]
+; editor used to enter commit logs, etc.
+editor = gvim
+username = Alexey Bader bader@newmail.ru
+
+[extensions]
+hgext.convert=
+hgext.graphlog =
+hgext.extdiff=
+
+[extdiff]
+cmd.cdiff = diff
+opts.cdiff = -Nrc2
+
+[web]
+cacerts = /etc/ssl/certs/ca-certificates.crt

@@ -1,0 +1,17 @@
+NNT=/home/bader/edu/ntt CD=. filter="*.c *.h" {
+ inv.c
+ mul_ntt.c
+ mul_ntt2p.c
+ mul_ntt4p.c
+ mul_ntt5p.c
+ ntt.c
+ ntt_params.c
+ test_fft_mul.c
+ test_mul.c
+ mul_ntt.h
+ mul_ntt2p.h
+ mul_ntt4p.h
+ mul_ntt5p.h
+ ntt.h
+ timing.h
+}
