@@ -86,16 +86,19 @@ set vb
 
 " Set utf8 encoding
 set enc=utf-8
+
 " These commands open folds
 set foldopen=block,insert,jump,mark,percent,quickfix,search,tag,undo
 
 set nu
+
 " Syntax coloring lines that are too long just slows down the world
 set synmaxcol=2048
 
 " set foldmethod=indent
 set incsearch
 set nohlsearch
+
 " Теперь нет необходимости передвигать курсор к краю экрана, чтобы подняться в
 " режиме редактирования
 set scrolljump=7
@@ -122,12 +125,6 @@ set mousehide
 " Это позволяет редактировать несколько файлов в один и тот же момент без
 " необходимости сохранения каждый раз когда переключаешься между ними
 set hidden
-
-" Скрывать указатель мыши, когда печатаем
-set mousehide
-
-" Включить автоотступы
-set autoindent
 
 " Влючить подстветку синтаксиса
 syntax on
@@ -332,21 +329,6 @@ execute "normal i"."#ifndef ".filename."\<cr>"."#define ".filename."\<cr>\<cr>\<
 set nomodified
 endfunction
 autocmd BufNewFile *.h,*.hpp,*.H,*.hh call NewHFile()
-
-" Работа с системой контроля версий
-nmap <Leader>va <Plug>VCSAdd
-nmap <Leader>vn <Plug>VCSAnnotate
-nmap <Leader>vc <Plug>VCSCommit
-nmap <Leader>vd <Plug>VCSDiff
-nmap <Leader>vg <Plug>VCSGotoOriginal
-nmap <Leader>vG <Plug>VCSGotoOriginal!
-nmap <Leader>vl <Plug>VCSLog
-nmap <Leader>vL <Plug>VCSLock
-nmap <Leader>vr <Plug>VCSReview
-nmap <Leader>vs <Plug>VCSStatus
-nmap <Leader>vu <Plug>VCSUpdate
-nmap <Leader>vU <Plug>VCSUnlock
-nmap <Leader>vv <Plug>VCSVimDiff
 
 map ё `
 map й q

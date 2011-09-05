@@ -5,18 +5,14 @@
             gPodder subscriptions
         </title>
         <dateCreated>
-            Mon, 17 Jan 2011 22:02:41 +0300
+            Mon, 05 Sep 2011 21:40:50 +0400
         </dateCreated>
     </head>
     <body>
         <outline text="Подкасты об ООП, паттернах и т.д. (для студентов)" title="The Art Of Programming" type="rss" xmlUrl="http://taop.rpod.ru/rss.xml"/>
-        <outline text="Insight, colour, wit and analysis as the BBC Russian Service business team looks at the world business and economy stories and their effects on everyday life. New episodes are added at 1830 Moscow (1530 London) Monday to Friday." title="Business round-up from BBC Russian" type="rss" xmlUrl="http://downloads.bbc.co.uk/podcasts/worldservice/bizclass/rss.xml"/>
         <outline text="" title="Channel 9" type="rss" xmlUrl="http://channel9.msdn.com/Feeds/RSS"/>
-        <outline text="A podcast for the new linux user." title="Linux Reality Podcast (MP3 Feed)" type="rss" xmlUrl="http://feeds2.feedburner.com/linuxreality"/>
         <outline text="Подкаст о семействе операционных систем Ubuntu и жизни сообщества" title="Russian Ubuntu Podcast" type="rss" xmlUrl="http://russianubuntupodcast.rpod.ru/rss.xml"/>
         <outline text="Your resource for English pronunciation and vocabulary questions" title="Speaking English Podcast" type="rss" xmlUrl="http://feeds.feedburner.com/speakingenglish"/>
-        <outline text="The most important five minutes of your day" title="tech5" type="rss" xmlUrl="http://www.mevio.com/feeds/tech5.xml"/>
-        <outline text="Each year, the TED (Technology, Entertainment, Design) conference hosts some of the world's most fascinating people: Trusted voices and convention-breaking mavericks, icons and geniuses. These podcasts (also available in audio format) capture the most ext" title="TEDTalks (video)" type="rss" xmlUrl="http://feeds.feedburner.com/tedtalks_video"/>
         <outline text="WEBSITE-DESCRIPTION" title="Vimcasts OGG Feed" type="rss" xmlUrl="http://vimcasts.org/feeds/ogg"/>
     </body>
 </opml>
