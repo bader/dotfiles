@@ -1,17 +1,43 @@
 " Включаем несовместимость настроек с Vi (ибо Vi нам и не понадобится).
 set nocompatible
 
-" Get that filetype stuff happening
-filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-filetype on
-filetype plugin on
-filetype indent on
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+"
+" original repos on github
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+" vim-scripts repos
+Bundle 'FuzzyFinder'
+" non github repos
+Bundle 'git://git.wincent.com/command-t.git'
+" ...
+
+filetype plugin indent on     " required!
+"
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed..
 
 " Don't update the display while executing macros
 set lazyredraw
 
+set confirm
 " At least let yourself know what mode you're in
 set showmode
 
@@ -137,8 +163,9 @@ set mousemodel=popup
 set expandtab
 
 " Размер табулации по умолчанию
-set shiftwidth=4
-set softtabstop=4
+set softtabstop=2
+set shiftwidth=2
+set expandtab
 set tabstop=4
 
 " Формат строки состояния
@@ -402,6 +429,26 @@ map Ю >
 
 " Подсвечивать строки длинее 80 символов
 au BufWinEnter *.* let w:m1=matchadd('Search', '\%>80v.*', -1)
+" Highlight trailing whitespace and lines longer than 80 columns.
+highlight LongLine ctermbg=DarkYellow guibg=DarkYellow
+highlight WhitespaceEOL ctermbg=DarkYellow guibg=DarkYellow
+if v:version >= 702
+  " Lines longer than 80 columns.
+  au BufWinEnter * let w:m0=matchadd('LongLine', '\%>80v.\+', -1)
+
+  " Whitespace at the end of a line. This little dance suppresses
+  " whitespace that has just been typed.
+  au BufWinEnter * let w:m1=matchadd('WhitespaceEOL', '\s\+$', -1)
+  au InsertEnter * call matchdelete(w:m1)
+  au InsertEnter * let w:m2=matchadd('WhitespaceEOL', '\s\+\%#\@<!$', -1)
+  au InsertLeave * call matchdelete(w:m2)
+  au InsertLeave * let w:m1=matchadd('WhitespaceEOL', '\s\+$', -1)
+else
+  au BufRead,BufNewFile * syntax match LongLine /\%>80v.\+/
+  au InsertEnter * syntax match WhitespaceEOL /\s\+\%#\@<!$/
+  au InsertLeave * syntax match WhitespaceEOL /\s\+$/
+endif
+
 
 " Когда мы меняем что-либо, это что-либо не сразу удаляется
 set cpoptions+=$
@@ -411,3 +458,47 @@ set cpoptions+=$
 
 " Автоматический перенос строки, как только длинна строки превысит textwidth
 set formatoptions=tcqb
+
+" clang-format для форматирования С/С++ кода
+map <C-K> :pyf /home/bader/.vim/clang-format.py<CR>
+imap <C-K> <ESC>:pyf /home/bader/.vim/clang-format.py<CR> 
+
+augroup filetype
+  au! BufRead,BufNewFile *.ll     set filetype=llvm
+augroup END
+
+augroup filetype
+  au! BufRead,BufNewFile *.td     set filetype=tablegen
+augroup END
+
+" Optional
+" C/C++ programming helpers
+augroup csrc
+  au!
+  autocmd FileType *      set nocindent smartindent
+  autocmd FileType c,cpp  set cindent
+augroup END
+" Set a few indentation parameters. See the VIM help for cinoptions-values for
+" details.  These aren't absolute rules; they're just an approximation of
+" common style in LLVM source.
+set cinoptions=:0,g0,(0,Ws,l1
+" Add and delete spaces in increments of `shiftwidth' for tabs
+set smarttab
+
+" LLVM Makefiles can have names such as Makefile.rules or TEST.nightly.Makefile,
+" so it's important to categorize them as such.
+augroup filetype
+  au! BufRead,BufNewFile *Makefile* set filetype=make
+augroup END
+
+" In Makefiles, don't expand tabs to spaces, since we need the actual tabs
+autocmd FileType make set noexpandtab
+
+" Useful macros for cleaning up code to conform to LLVM coding guidelines
+
+" Delete trailing whitespace and tabs at the end of each line
+command! DeleteTrailingWs :%s/\s\+$//
+
+" Convert all tab characters to two spaces
+command! Untab :%s/\t/  /g
+
