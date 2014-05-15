@@ -21,3 +21,13 @@ alias -s pdf=xpdf
 #alias apt='sudo apt-get install'
 alias apt='sudo apt-get'
 alias g='gvim --remote-silent'
+
+# git aliases
+alias gi='git commit'
+alias gm='git commit -m'
+alias gma='git commit -am'
+alias gs='git status'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias ga='git add'
+alias gp='git pull'
