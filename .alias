@@ -1,16 +1,16 @@
 alias df='df -mh -x supermount'
-alias du='du -h' # du сразу выводит размеры "по-человечески"
+alias du='du -h'
 alias less='less -M'
 
 alias ls='ls -F --color=auto --group-directories-first'
 alias ll='ls -lh --color=auto'
 alias la='ls -A'
 alias l='ls -CF'
-alias ls-l='ls -l' # ещё одна опечатка
+alias ls-l='ls -l'
 
-alias ..='cd ..' # экономим целых 3 символа
+alias ..='cd ..'
 alias ...='cd ../..'
-alias cd..='cd ..' # исправление обычной очепятки
+alias cd..='cd ..'
 
 alias grep='grep --colour=auto'
 

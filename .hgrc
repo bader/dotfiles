@@ -1,7 +1,7 @@
 [ui]
 ; editor used to enter commit logs, etc.
 editor = gvim
-username = Alexey Bader bader@newmail.ru
+username = Alexey Bader
 
 [extensions]
 hgext.convert=
