@@ -11,6 +11,3 @@ hgext.extdiff=
 [extdiff]
 cmd.cdiff = diff
 opts.cdiff = -Nrc2
-
-[web]
-cacerts = /etc/ssl/certs/ca-certificates.crt

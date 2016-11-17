@@ -37,6 +37,8 @@ set confirm
 " At least let yourself know what mode you're in
 set showmode
 
+nmap <F5> :make<cr>
+
 " Let's make it easy to edit this file (mnemonic for the key sequence is
 " 'e'dit 'v'imrc)
 nmap <silent> ,ev :e $MYVIMRC<cr>
@@ -425,13 +427,14 @@ map Ю >
 "map , ?
 
 " Подсвечивать строки длинее 80 символов
-au BufWinEnter *.* let w:m1=matchadd('Search', '\%>80v.*', -1)
+"au BufWinEnter *.* let w:m1=matchadd('Search', '\%>80v.*', -1)
+
 " Highlight trailing whitespace and lines longer than 80 columns.
-highlight LongLine ctermbg=DarkYellow guibg=DarkYellow
+"highlight LongLine ctermbg=DarkYellow guibg=DarkYellow
 highlight WhitespaceEOL ctermbg=DarkYellow guibg=DarkYellow
 if v:version >= 702
   " Lines longer than 80 columns.
-  au BufWinEnter * let w:m0=matchadd('LongLine', '\%>80v.\+', -1)
+  "au BufWinEnter * let w:m0=matchadd('LongLine', '\%>80v.\+', -1)
 
   " Whitespace at the end of a line. This little dance suppresses
   " whitespace that has just been typed.
@@ -499,3 +502,4 @@ command! DeleteTrailingWs :%s/\s\+$//
 " Convert all tab characters to two spaces
 command! Untab :%s/\t/  /g
 
+set relativenumber

@@ -1,0 +1,11 @@
+[core]
+	excludesfile = ~/.gitignore
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+
+# Allow local customizations in the .gitconfig_local file
+[include]
+    path = ~/.gitconfig_local
