@@ -460,8 +460,8 @@ set cpoptions+=$
 set formatoptions=tcqb
 
 " clang-format для форматирования С/С++ кода
-map <C-K> :pyf /home/bader/.vim/clang-format.py<CR>
-imap <C-K> <ESC>:pyf /home/bader/.vim/clang-format.py<CR> 
+map <C-K> :pyf ~/.vim/clang-format.py<CR>
+imap <C-K> <ESC>:pyf ~/.vim/clang-format.py<CR> 
 
 augroup filetype
   au! BufRead,BufNewFile *.ll     set filetype=llvm
