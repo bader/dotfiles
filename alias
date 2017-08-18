@@ -12,6 +12,8 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias cd..='cd ..'
 
+alias mc='LANG=C mc'
+
 alias grep='grep --colour=auto'
 
 alias -s {avi,mpeg,mpg,mov,m2v}=mplayer
@@ -34,3 +36,7 @@ alias gp='git pull'
 alias gl='git log'
 alias gb='git branch'
 alias gc='git checkout'
+
+# repo aliases
+alias rs='repo sync'
+alias rst='repo status'
