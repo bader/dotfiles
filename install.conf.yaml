@@ -7,6 +7,7 @@
 - link:
     ~/.dotfiles: ''
     ~/.alias: alias
+    ~/.env: env
     ~/.gitconfig: gitconfig
     ~/.gitignore: gitignore
     ~/.tmux.conf: tmux.conf

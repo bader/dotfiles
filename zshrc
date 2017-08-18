@@ -1,4 +1,4 @@
-autoload -U compinit promptinit
+autoload -Uz compinit promptinit
 compinit
 promptinit;
 autoload -U pick-web-browser
@@ -8,73 +8,6 @@ autoload -U insert-files
 zle -N insert-files
 autoload -U predict-on
 zle -N predict-on
-
-precmd();
-{
-           [[ -t 1 ]] || return
-                  case $TERM in
-                                 xterm*|rxvt|(dt|k|E)term*) print -Pn "\e]2;[%~] :: %l\a"
-                                                ;;
-                                                       esac
-}
-preexec() {
-           [[ -t 1 ]] || return
-                  case $TERM in
-                                 *xterm*|rxvt|(dt|k|E)term*) print -Pn "\e]2;<$1> [%~] :: %l\a"
-                                                ;;
-                                                       esac
-}
-
-function rnm () {
-    if [ $# -eq 0 ] || [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
-        echo -e "Rename file or folder. Changes in the name; spaces with '_', substrings ' - ' with '-', and delete non printable characters. Usage ${RED_FG}'rnm file'$NC or ${RED_FG}'rnm folder'$NC"
-        return
-    fi
-    if [ ! -d "$1" ] && [ ! -f "$1" ]; then
-        echo "'$1' is not a valid file or folder"
-        return
-    fi
-    # first delete blank spaces using sed, later tr delete non printable characters
-    local NEW=`echo $1 | sed s/' '/_/g | tr -cd '\11\12\40-\176'`
-    # others adjust for best renaming
-    NEW=`echo $NEW | sed s/'_-_'/-/g`
-    mv "$1" $NEW
-    echo "renamed as '$NEW'"
-}
-
-
-function rmtabs () {
-    if [ $# -eq 0 ] || [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
-        echo -e "Remove the tabulators in files and replace each by 4 spaces. Usage ${RED_FG}'rmtabs file1 file2...'$NC"
-        return
-    fi
-
-    for file in $*; do
-        if [ -f "$file" ]; then
-            sed s/'\t'/'    '/g < $file > modified
-            mv modified $file
-        else
-            echo "'$file' is not a valid file; jumping it"
-        fi
-    done
-}
-
-
-function rmnpc () {
-    if [ $# -eq 0 ] || [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
-        echo -e "Remove non printable characters from a files. Usage ${RED_FG}'rmnpc file1 file2...'$NC"
-        return
-    fi
-
-    for file in $*; do
-        if [ -f "$file" ]; then
-            tr -cd '\11\12\40-\176' < $file > modified
-            mv modified $file
-        else
-            echo "'$file' is not a valid file; jumping it"
-        fi
-    done
-}
 
 setopt autocd           # AutoCD
 # Extended opts
@@ -96,6 +29,9 @@ setopt APPEND_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
+
+# Edit commands vi-style
+#set -o vi
 
 # this one is very nice:
 # cursor up/down look for a command that started like the one starting on the command line
@@ -148,13 +84,40 @@ zstyle ':completion:*' menu select=long-list select=0
 zstyle ':completion:*' old-menu false
 zstyle ':completion:*' original true
 
-. $HOME/.alias
+zstyle ':completion:*' auto-description 'specify: %d'
+zstyle ':completion:*' completer _expand _complete _correct _approximate
+zstyle ':completion:*' format 'Completing %d'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' menu select=2
+eval "$(dircolors -b)"
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
+zstyle ':completion:*' menu select=long
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' use-compctl false
+zstyle ':completion:*' verbose true
 
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-CDPATH=".:~:/mnt"
-EDITOR=gvim
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+
+setopt prompt_subst
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' actionformats \
+    '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
+zstyle ':vcs_info:*' formats       \
+    '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f '
+zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
+
+zstyle ':vcs_info:*' enable git cvs svn
+
+# Import aliases
+source ~/.alias
+source ~/.env
+if [ -f ~/.zshrc_local ]; then
+  source ~/.zshrc_local
+fi
 
 bindkey '\e[3~' delete-char # del
 bindkey ';5D' backward-word # ctrl+left
@@ -168,11 +131,73 @@ PROMPT=$'%{\e[1;32m%} %{\e[1;34m%}%~ %#%{\e[0m%} ' # root dir #
 fi
 RPROMPT=$'%{\e[1;34m%}%T%{\e[0m%}' # right prompt with time
 
-#export MANOPT="-L ru"
-#export HISTCONTROL=ignorespace
-alias \$=''
+precmd();
+{
+           [[ -t 1 ]] || return
+                  case $TERM in
+                                 xterm*|rxvt|(dt|k|E)term*) print -Pn "\e]2;[%~] :: %l\a"
+                                                ;;
+                                                       esac
+}
+preexec() {
+           [[ -t 1 ]] || return
+                  case $TERM in
+                                 *xterm*|rxvt|(dt|k|E)term*) print -Pn "\e]2;<$1> [%~] :: %l\a"
+                                                ;;
+                                                       esac
+}
 
-# Распаковать архив $1
+function rnm () {
+    if [ $# -eq 0 ] || [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
+        echo -e "Rename file or folder. Changes in the name; spaces with '_', substrings ' - ' with '-', and delete non printable characters. Usage ${RED_FG}'rnm file'$NC or ${RED_FG}'rnm folder'$NC"
+        return
+    fi
+    if [ ! -d "$1" ] && [ ! -f "$1" ]; then
+        echo "'$1' is not a valid file or folder"
+        return
+    fi
+    # first delete blank spaces using sed, later tr delete non printable characters
+    local NEW=`echo $1 | sed s/' '/_/g | tr -cd '\11\12\40-\176'`
+    # others adjust for best renaming
+    NEW=`echo $NEW | sed s/'_-_'/-/g`
+    mv "$1" $NEW
+    echo "renamed as '$NEW'"
+}
+
+
+function rmtabs () {
+    if [ $# -eq 0 ] || [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
+        echo -e "Remove the tabulators in files and replace each by 4 spaces. Usage ${RED_FG}'rmtabs file1 file2...'$NC"
+        return
+    fi
+
+    for file in $*; do
+        if [ -f "$file" ]; then
+            sed s/'\t'/'    '/g < $file > modified
+            mv modified $file
+        else
+            echo "'$file' is not a valid file; jumping it"
+        fi
+    done
+}
+
+function rmnpc () {
+    if [ $# -eq 0 ] || [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
+        echo -e "Remove non printable characters from a files. Usage ${RED_FG}'rmnpc file1 file2...'$NC"
+        return
+    fi
+
+    for file in $*; do
+        if [ -f "$file" ]; then
+            tr -cd '\11\12\40-\176' < $file > modified
+            mv modified $file
+        else
+            echo "'$file' is not a valid file; jumping it"
+        fi
+    done
+}
+
+# Unpack achrive $1
 extr() {
     if [ -f $1 ] ; then
         case $1 in
@@ -194,7 +219,7 @@ extr() {
             fi
 }
 
- # Упаковать $1 в архив
+ # Pack  $1 into archive
 pk() {
     if [ $1 ] ; then
         case $1 in
@@ -211,6 +236,3 @@ pk() {
         echo "'$1' не является поддерживаемым файлом"
             fi
 }
-
-# Редактирование команд в стиле vi
-#set -o vi
