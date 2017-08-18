@@ -1,11 +1,25 @@
 [core]
+	editor = vim
+	whitespace = trailing-space,space-before-tab
+	autocrlf = Input
 	excludesfile = ~/.gitignore
+[color]
+	ui = auto
+	status = auto
+	branch = auto
+[apply]
+	whitespace = fix
 [alias]
+	st = status
+	mt = mergetool
+	ci = commit
 	co = checkout
 	br = branch
-	ci = commit
-	st = status
-
+	last = log -1 HEAD
+	ri = rebase --interactive --autosquash
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+[user]
+	name = Alexey Bader
 # Allow local customizations in the .gitconfig_local file
 [include]
     path = ~/.gitconfig_local
