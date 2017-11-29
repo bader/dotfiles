@@ -5,21 +5,21 @@
 - clean: ['~']
 
 - link:
-    ~/.dotfiles: ''
     ~/.alias: alias
+    ~/.bashrc: bashrc
+    ~/.config/gpodder: config/gpodder
+    ~/.config/mc: config/mc
     ~/.env: env
     ~/.gitconfig: gitconfig
     ~/.gitignore: gitignore
-    ~/.tmux.conf: tmux.conf
-    ~/.bashrc: bashrc
+    ~/.gvimrc: vim/gvimrc
     ~/.hgrc: hgrc
+    ~/.inputrc: inputrc
     ~/.lircrc: lircrc
+    ~/.tmux.conf: tmux.conf
     ~/.vim: vim
     ~/.vimrc: vim/vimrc
-    ~/.gvimrc: vim/gvimrc
     ~/.zshrc: zshrc
-    ~/.config/mc: config/mc
-    ~/.config/gpodder: config/gpodder
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

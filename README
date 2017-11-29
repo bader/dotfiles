@@ -1,5 +1,9 @@
 ReadMe file for setting up new account.
 
+git clone https://github.com/bader/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+./install
+
 This repository contains config files for:
 1. Gpodder
 2. VIM
