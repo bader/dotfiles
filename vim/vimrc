@@ -426,9 +426,6 @@ map Б <
 map Ю >
 "map , ?
 
-" Подсвечивать строки длинее 80 символов
-"au BufWinEnter *.* let w:m1=matchadd('Search', '\%>80v.*', -1)
-
 " Highlight trailing whitespace and lines longer than 80 columns.
 "highlight LongLine ctermbg=DarkYellow guibg=DarkYellow
 highlight WhitespaceEOL ctermbg=DarkYellow guibg=DarkYellow
@@ -503,3 +500,8 @@ command! DeleteTrailingWs :%s/\s\+$//
 command! Untab :%s/\t/  /g
 
 set relativenumber
+
+" Allow local vim configuration files. Useful in case we need to modify vim
+" configuraton for each project.
+set exrc
+set secure
