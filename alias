@@ -3,7 +3,7 @@ alias du='du -h'
 alias less='less -M'
 
 alias ls='ls -F --color=auto --group-directories-first'
-alias ll='ls -lh --color=auto'
+alias ll='ls -lh'
 alias la='ls -A'
 alias l='ls -CF'
 alias ls-l='ls -l'
@@ -40,3 +40,12 @@ alias gc='git checkout'
 # repo aliases
 alias rs='repo sync'
 alias rst='repo status'
+
+# Local alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.alias.local, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.alias.local ]; then
+    . ~/.alias.local
+fi
