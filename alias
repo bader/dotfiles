@@ -16,9 +16,10 @@ alias mc='LANG=C mc'
 
 alias grep='grep --colour=auto'
 
-alias -s {avi,mpeg,mpg,mov,m2v}=mplayer
-alias -s {odt,doc,sxw,rtf}=openoffice.org
-alias -s pdf=xpdf
+# Apparently -s is invalid option in BASH
+#alias -s {avi,mpeg,mpg,mov,m2v}=mplayer
+#alias -s {odt,doc,sxw,rtf}=openoffice.org
+#alias -s pdf=xpdf
 
 #alias apt='sudo apt-get install'
 alias apt='sudo apt-get'
