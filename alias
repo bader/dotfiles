@@ -2,7 +2,7 @@ alias df='df -mh -x supermount'
 alias du='du -h'
 alias less='less -M'
 
-alias ls='ls -F --color=auto --group-directories-first'
+alias ls='ls -F --group-directories-first'
 alias ll='ls -lh'
 alias la='ls -A'
 alias l='ls -CF'
