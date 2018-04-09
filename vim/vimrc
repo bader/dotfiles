@@ -14,7 +14,6 @@ Plugin 'gmarik/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
-Plugin 'kien/ctrlp.vim'
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -39,6 +38,10 @@ endif
 Plugin 'gregsexton/gitv'
 " Tmux + VIM navigation
 Plugin 'christoomey/vim-tmux-navigator'
+" CtrlP
+Plugin 'kien/ctrlp.vim'
+" TagList
+Plugin 'taglist.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -298,9 +301,9 @@ imap <F5> <esc><esc>:BufExplorer<cr>
 map <F6> :vimgrep /fixme\\|todo\\|TODO/j *.[c,cpp,h,hpp,py]<CR>:cw<CR>
 
 " F7 - "make" команда
-map <F7> :wa<cr>:make<cr>
-vmap <F7> <esc>:make<cr>i
-imap <F7> <esc>:make<cr>i
+map <F7> :wa<cr>:CtrlP<cr>
+vmap <F7> <esc>:CtrlP<cr>i
+imap <F7> <esc>:CtrlP<cr>i
 
 " F10 - показать окно Taglist
 map <F10> :TlistToggle<cr>
@@ -314,9 +317,9 @@ nmap <silent> <F11> <Plug>ToggleProject
 "imap <F11> <esc>:Project<cr>
 
 " F12 - обозреватель файлов
-map <F12> :Ex<cr>
-vmap <F12> <esc>:Ex<cr>i
-imap <F12> <esc>:Ex<cr>i
+map <F12> :NERDTreeToggle<cr>
+vmap <F12> <esc>:NERDTreeToggle<cr>i
+imap <F12> <esc>:NERDTreeToggle<cr>i
 
 " Меню выбора кодировки текста (koi8-r, cp1251, cp866, utf8)
 set wildmenu
@@ -498,6 +501,21 @@ augroup END
 augroup filetype
   au! BufRead,BufNewFile *.td     set filetype=tablegen
 augroup END
+
+" Taglist configuration
+" Opens the taglist whenever i open vim
+let Tlist_Auto_Open = 1
+" Put the taglist window on the right side of the screen.
+let Tlist_Use_Right_Window = 1
+" Mapping 'Alt + RightArrow' keystrokes for opening taglist window.
+map <A-Right>  :TlistOpen<CR>
+" Mapping 'Alt + LeftArrow' keystrokes for opening/closing taglist window.
+map <A-Left>  :TlistToggle<CR>
+" A single click in the taglist window will take you to that tag.
+let Tlist_Use_SingleClick = 1
+" When you exit vim, taglist also will be closed.
+let Tlist_Exit_OnlyWindow = 1
+
 
 " Optional
 " C/C++ programming helpers
