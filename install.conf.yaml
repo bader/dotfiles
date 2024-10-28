@@ -7,7 +7,6 @@
 - link:
     ~/.alias: alias
     ~/.bashrc: bashrc
-    ~/.config/gpodder: config/gpodder
     ~/.config/mc: config/mc
     ~/.env: env
     ~/.gitconfig: gitconfig
@@ -15,7 +14,6 @@
     ~/.gvimrc: vim/gvimrc
     ~/.hgrc: hgrc
     ~/.inputrc: inputrc
-    ~/.lircrc: lircrc
     ~/.tmux.conf: tmux.conf
     ~/.vim: vim
     ~/.vimrc: vim/vimrc
