@@ -6,13 +6,13 @@
 
 - link:
     ~/.alias: alias
+    ~/.bash_profile: bash_profile
     ~/.bashrc: bashrc
     ~/.config/mc: config/mc
     ~/.env: env
     ~/.gitconfig: gitconfig
     ~/.gitignore: gitignore
     ~/.gvimrc: vim/gvimrc
-    ~/.hgrc: hgrc
     ~/.inputrc: inputrc
     ~/.tmux.conf: tmux.conf
     ~/.vim: vim
