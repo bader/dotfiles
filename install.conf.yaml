@@ -18,6 +18,10 @@
     ~/.vim: vim
     ~/.vimrc: vim/vimrc
     ~/.zshrc: zshrc
+    ~/.claude/settings.json: claude/settings.json
+    ~/.config/opencode/opencode.json: config/opencode/opencode.json
+    ~/.config/opencode/tui.json: config/opencode/tui.json
+    ~/.config/gh/config.yml: config/gh/config.yml
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

@@ -1,0 +1,7 @@
+{
+  "model": "us.anthropic.claude-sonnet-5",
+  "autoUpdatesChannel": "latest",
+  "tui": "default",
+  "theme": "dark",
+  "includeCoAuthoredBy": false
+}
