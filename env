@@ -6,6 +6,6 @@ export HISTSIZE=100000
 export HISTFILESIZE=100000
 export HISTCONTROL=ignoredups
 
-if [ -f ~/.env_local ]; then
-  source ~/.env_local
+if [ -f ~/.work/env_extra ]; then
+  source ~/.work/env_extra
 fi

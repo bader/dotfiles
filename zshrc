@@ -115,8 +115,8 @@ zstyle ':vcs_info:*' enable git cvs svn
 # Import aliases
 source ~/.alias
 source ~/.env
-if [ -f ~/.zshrc_local ]; then
-  source ~/.zshrc_local
+if [ -f ~/.work/zshrc ]; then
+  source ~/.work/zshrc
 fi
 
 bindkey '\e[3~' delete-char # del

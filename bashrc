@@ -23,6 +23,9 @@ HISTFILESIZE=999999
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
+# This is for make neovim color scheme to be the same inside and outside of tmux
+# TERM=xterm-256color
+
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
 #shopt -s globstar
@@ -94,4 +97,8 @@ if ! shopt -oq posix; then
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
+fi
+
+if [ -f ~/.work/bashrc ]; then
+    . ~/.work/bashrc
 fi

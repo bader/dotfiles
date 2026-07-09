@@ -24,6 +24,7 @@ alias grep='grep --colour=auto'
 #alias apt='sudo apt-get install'
 alias apt='sudo apt-get'
 alias g='gvim --remote-silent'
+alias vim='nvim'
 
 # git aliases
 alias gi='git commit'
@@ -42,11 +43,18 @@ alias gc='git checkout'
 alias rs='repo sync'
 alias rst='repo status'
 
+export EDITOR=nvim
+
+mkcd () {
+  \mkdir -p "$1"
+  cd "$1"
+}
+
 # Local alias definitions.
 # You may want to put all your additions into a separate file like
-# ~/.alias.local, instead of adding them here directly.
+# ~/.work/alias, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.alias.local ]; then
-    . ~/.alias.local
+if [ -f ~/.work/alias ]; then
+    . ~/.work/alias
 fi

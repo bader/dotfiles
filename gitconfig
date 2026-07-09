@@ -1,5 +1,5 @@
 [core]
-	editor = vim
+	editor = nvim
 	whitespace = trailing-space,space-before-tab
 	autocrlf = Input
 	excludesfile = ~/.gitignore
@@ -11,6 +11,7 @@
 	whitespace = fix
 [alias]
 	st = status
+	sw = switch
 	mt = mergetool
 	ci = commit
 	co = checkout
@@ -20,6 +21,13 @@
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 [user]
 	name = Alexey Bader
-# Allow local customizations in the .gitconfig_local file
+# Allow local customizations in the ~/.work/gitconfig file
 [include]
-    path = ~/.gitconfig_local
+    path = ~/.work/gitconfig
+[merge]
+	tool = nvimdiff
+[mergetool]
+	prompt = false
+	keepBackup = false
+[mergetool "nvimdiff"]
+	layout = "LOCAL,BASE,REMOTE / MERGED"
