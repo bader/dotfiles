@@ -1,7 +1,10 @@
 {
+  "includeCoAuthoredBy": false,
   "model": "us.anthropic.claude-sonnet-5",
   "autoUpdatesChannel": "latest",
   "tui": "default",
   "theme": "dark",
-  "includeCoAuthoredBy": false
+  "enabledPlugins": {
+    "clangd-lsp@claude-plugins-official": true
+  }
 }
