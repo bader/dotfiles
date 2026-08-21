@@ -1,6 +1,6 @@
 # Dotfiles
 
-## Linux
+## Linux and WSL
 
 git clone https://github.com/bader/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
@@ -12,16 +12,8 @@ The installer links the Neovim configuration and installs Neovim when needed:
 
 Start `nvim` once after installation to let `lazy.nvim` install its plugins.
 
-## Windows
-
-```powershell
-git clone --recursive https://github.com/bader/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles
-./install.ps1
-```
-
-Python 3.8+ and permission to create symbolic links are required by Dotbot. The
-installer installs Neovim through `winget` when it is not already on `PATH`.
+On Windows, use a Linux distribution under WSL and run these commands from the
+distribution's home directory, not from `/mnt/c`.
 
 This repository contains config files for:
 - Vim
