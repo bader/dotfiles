@@ -102,3 +102,6 @@ fi
 if [ -f ~/.work/bashrc ]; then
     . ~/.work/bashrc
 fi
+
+# opencode
+export PATH="$HOME/.opencode/bin:$PATH"
