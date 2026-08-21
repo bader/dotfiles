@@ -25,6 +25,7 @@ alias grep='grep --colour=auto'
 alias apt='sudo apt-get'
 alias g='gvim --remote-silent'
 alias vim='nvim'
+alias oc='opencode'
 
 export PATH="$HOME/.local/bin:$PATH"
 
