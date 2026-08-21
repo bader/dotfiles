@@ -22,6 +22,7 @@
     ~/.zshrc: zshrc
     ~/.claude/settings.json: claude/settings.json
     ~/.config/opencode/opencode.json: config/opencode/opencode.json
+    ~/.config/opencode/instructions.md: config/opencode/instructions.md
     ~/.config/opencode/tui.json: config/opencode/tui.json
     ~/.config/gh/config.yml: config/gh/config.yml
 
