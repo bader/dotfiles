@@ -7,6 +7,7 @@
   ],
   "permission": {
     "bash": {
+      "*": "ask",
       "git status *": "allow",
       "git log *": "allow",
       "git branch *": "allow",
@@ -21,8 +22,7 @@
       "opencode debug *": "allow",
       "bash -n *": "allow",
       "python3 -m json.tool *": "allow",
-      "jq empty *": "allow",
-      "*": "ask"
+      "jq empty *": "allow"
     }
   }
 }
