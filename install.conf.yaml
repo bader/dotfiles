@@ -28,3 +28,4 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [bash scripts/install-neovim.sh, Installing Neovim]
+  - [bash scripts/install-opencode.sh, Installing OpenCode]
