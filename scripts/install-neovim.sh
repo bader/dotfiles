@@ -3,7 +3,11 @@
 set -euo pipefail
 
 if command -v nvim >/dev/null 2>&1; then
-  exit 0
+  nvim_version="$(nvim --version 2>/dev/null || true)"
+  if [[ "${nvim_version}" =~ NVIM\ v([0-9]+)\.([0-9]+) ]] \
+    && (( BASH_REMATCH[1] > 0 || BASH_REMATCH[2] >= 11 )); then
+    exit 0
+  fi
 fi
 
 if command -v pacman >/dev/null 2>&1; then
