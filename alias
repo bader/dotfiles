@@ -26,6 +26,8 @@ alias apt='sudo apt-get'
 alias g='gvim --remote-silent'
 alias vim='nvim'
 
+export PATH="$HOME/.local/bin:$PATH"
+
 # git aliases
 alias gi='git commit'
 alias gm='git commit -m'

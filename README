@@ -1,10 +1,30 @@
-README file for setting up a new Linux account.
+# Dotfiles
+
+## Linux
 
 git clone https://github.com/bader/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 ./install
 
+The installer links the Neovim configuration and installs Neovim when needed:
+- Ubuntu: the latest upstream x86_64 release under `~/.local/bin`.
+- Omarchy: the distribution `neovim` package via `pacman`.
+
+Start `nvim` once after installation to let `lazy.nvim` install its plugins.
+
+## Windows
+
+```powershell
+git clone --recursive https://github.com/bader/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+./install.ps1
+```
+
+Python 3.8+ and permission to create symbolic links are required by Dotbot. The
+installer installs Neovim through `winget` when it is not already on `PATH`.
+
 This repository contains config files for:
 - Vim
+- Neovim
 - Zsh/Bash
 - Midnight Commander

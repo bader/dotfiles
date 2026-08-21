@@ -1,5 +1,6 @@
 - defaults:
     link:
+      create: true
       relink: true
 
 - clean: ['~']
@@ -14,6 +15,7 @@
     ~/.gitignore: gitignore
     ~/.gvimrc: vim/gvimrc
     ~/.inputrc: inputrc
+    ~/.config/nvim: neovim
     ~/.tmux.conf: tmux.conf
     ~/.vim: vim
     ~/.vimrc: vim/vimrc
@@ -25,3 +27,4 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  - [bash scripts/install-neovim.sh, Installing Neovim]
