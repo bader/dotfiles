@@ -1,5 +1,9 @@
 {
-  "includeCoAuthoredBy": false,
+  "attribution": {
+    "sessionUrl": false,
+    "commit": "Assisted-By: Claude Code",
+    "pr": "Assisted-By: Claude Code"
+  },
   "permissions": {
     "ask": [
       "Bash(git push:*)"

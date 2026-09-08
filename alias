@@ -26,6 +26,7 @@ alias apt='sudo apt-get'
 alias g='gvim --remote-silent'
 alias vim='nvim'
 alias oc='opencode'
+alias cc='claude'
 
 export PATH="$HOME/.local/bin:$PATH"
 
